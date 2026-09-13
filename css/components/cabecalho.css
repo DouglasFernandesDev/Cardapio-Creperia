@@ -55,6 +55,18 @@
   background: rgb(255 255 255 / 0.1);
   color: var(--cor-creme-claro);
   white-space: nowrap;
+
+  /*
+   * Item flex, por padrão, não encolhe abaixo do próprio conteúdo
+   * (min-width: auto implícito) — combinado com `white-space: nowrap`, esse
+   * badge se recusava a ceder espaço em telas estreitas e empurrava os
+   * ícones de WhatsApp/carrinho para fora da viewport. `overflow: hidden`
+   * zera esse mínimo automático (regra do próprio flexbox) e permite truncar
+   * com reticências em vez de estourar o layout.
+   */
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cabecalho__status.status--aberto {
@@ -70,6 +82,7 @@
 .cabecalho__acoes {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   gap: var(--espaco-2);
   margin-left: auto;
 }

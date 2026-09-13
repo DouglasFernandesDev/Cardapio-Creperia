@@ -1,0 +1,158 @@
+/* =========================================================
+   Layout geral: container, hero e rodapé.
+   Mobile-first — media queries usam min-width.
+   ========================================================= */
+
+.container {
+  width: 100%;
+  max-width: var(--largura-maxima);
+  margin-inline: auto;
+  padding-inline: var(--espaco-4);
+}
+
+@media (width >= 768px) {
+  .container {
+    padding-inline: var(--espaco-6);
+  }
+}
+
+/* --- Hero --- */
+
+.hero {
+  background: linear-gradient(180deg, var(--cor-creme) 0%, var(--cor-creme-claro) 100%);
+  text-align: center;
+  padding-block: var(--espaco-8) var(--espaco-6);
+  border-bottom: 4px solid var(--cor-dourado);
+}
+
+.hero__selo {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--cor-marrom-caramelo);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: var(--espaco-2);
+}
+
+.hero__titulo {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: var(--espaco-2);
+}
+
+.hero__slogan {
+  font-size: 1.15rem;
+  color: var(--cor-marrom-medio);
+  max-width: 32ch;
+  margin-inline: auto;
+  margin-bottom: var(--espaco-5);
+}
+
+.hero__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--espaco-3);
+  margin-bottom: var(--espaco-4);
+}
+
+.hero__aviso {
+  font-size: 0.9rem;
+  color: var(--cor-marrom-caramelo);
+  margin: 0;
+}
+
+/* --- Cardápio (main) --- */
+
+#cardapio {
+  padding-block: var(--espaco-6) var(--espaco-8);
+}
+
+.secao-categoria {
+  container-type: inline-size;
+  scroll-margin-top: 7.5rem;
+  margin-bottom: var(--espaco-8);
+}
+
+.secao-categoria__titulo {
+  font-size: 1.75rem;
+  border-bottom: 2px solid var(--cor-dourado);
+  padding-bottom: var(--espaco-2);
+  margin-bottom: var(--espaco-5);
+}
+
+.grade-produtos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-4);
+}
+
+@container (min-width: 480px) {
+  .grade-produtos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 768px) {
+  .grade-produtos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espaco-5);
+  }
+}
+
+@media (width >= 1024px) {
+  .grade-produtos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- Rodapé --- */
+
+.rodape {
+  background: var(--cor-marrom-escuro);
+  color: var(--cor-creme-claro);
+  padding-block: var(--espaco-8) var(--espaco-5);
+}
+
+.rodape__conteudo {
+  display: grid;
+  gap: var(--espaco-6);
+}
+
+@media (width >= 640px) {
+  .rodape__conteudo {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.rodape h2,
+.rodape h3 {
+  color: var(--cor-dourado-claro);
+}
+
+.rodape__whatsapp {
+  display: inline-block;
+  margin-top: var(--espaco-2);
+  color: var(--cor-creme-claro);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rodape__horarios li {
+  margin-bottom: var(--espaco-1);
+}
+
+.rodape__aviso {
+  color: var(--cor-dourado-claro);
+  font-size: 0.9rem;
+  margin-top: var(--espaco-2);
+}
+
+.rodape__copyright {
+  text-align: center;
+  margin: var(--espaco-6) 0 0;
+  padding-top: var(--espaco-4);
+  border-top: 1px solid rgb(255 255 255 / 0.15);
+  font-size: 0.85rem;
+  color: var(--cor-creme);
+}

@@ -1,0 +1,37 @@
+{
+  "name": "cardapio-creperia",
+  "version": "1.0.0",
+  "description": "Cardápio digital da Sagrado Creperia — carrinho, frete por KM e pedido via WhatsApp",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "live-server --port=8080",
+    "lint": "eslint .",
+    "lint:css": "stylelint \"css/**/*.css\"",
+    "test": "playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DouglasFernandesDev/Cardapio-Creperia.git"
+  },
+  "keywords": [
+    "cardapio-digital",
+    "creperia",
+    "whatsapp"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DouglasFernandesDev/Cardapio-Creperia/issues"
+  },
+  "homepage": "https://github.com/DouglasFernandesDev/Cardapio-Creperia#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@playwright/test": "^1.48.0",
+    "eslint": "^9.13.0",
+    "globals": "^17.12.0",
+    "live-server": "^1.2.2",
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}

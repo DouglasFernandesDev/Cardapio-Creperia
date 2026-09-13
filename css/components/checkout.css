@@ -1,0 +1,73 @@
+/* =========================================================
+   Formulário de checkout (dialog centralizado).
+   ========================================================= */
+
+.checkout {
+  width: min(560px, 92vw);
+}
+
+.checkout__formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-4);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-1);
+}
+
+.campo label,
+.campo legend {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: var(--espaco-3);
+  border: 1px solid var(--cor-marrom-caramelo);
+  border-radius: var(--raio-pequeno);
+  background: var(--cor-branco);
+  min-height: 44px;
+}
+
+.campo textarea {
+  min-height: 72px;
+  resize: vertical;
+}
+
+.checkout__frete {
+  border: 1px dashed var(--cor-marrom-caramelo);
+  border-radius: var(--raio-medio);
+  padding: var(--espaco-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-3);
+}
+
+.checkout__resultado-frete {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--cor-marrom-caramelo);
+}
+
+.checkout__resultado-frete--aviso {
+  color: var(--cor-erro);
+}
+
+.checkout__resumo-total {
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-align: right;
+  margin: 0;
+  padding-top: var(--espaco-3);
+  border-top: 2px solid var(--cor-dourado);
+}
+
+.checkout__enviar {
+  width: 100%;
+}

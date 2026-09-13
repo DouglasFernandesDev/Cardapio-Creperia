@@ -1,0 +1,191 @@
+/* =========================================================
+   Primitivos de UI reutilizáveis: botões, dialog (drawer/modal),
+   stepper de quantidade e toasts.
+   ========================================================= */
+
+/* --- Botões --- */
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-2);
+  padding: var(--espaco-3) var(--espaco-5);
+  border-radius: var(--raio-pequeno);
+  font-weight: 800;
+  text-decoration: none;
+  min-height: 44px;
+  border: 2px solid transparent;
+  transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao),
+    background var(--transicao-padrao);
+}
+
+.botao:hover {
+  transform: translateY(-1px);
+}
+
+.botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.botao--dourado {
+  background: var(--cor-dourado);
+  color: var(--cor-marrom-escuro);
+}
+
+.botao--dourado:hover:not(:disabled) {
+  background: var(--cor-dourado-claro);
+}
+
+.botao--contorno {
+  background: transparent;
+  border-color: var(--cor-marrom-escuro);
+  color: var(--cor-marrom-escuro);
+}
+
+.botao--contorno:hover {
+  background: var(--cor-marrom-escuro);
+  color: var(--cor-creme-claro);
+}
+
+.botao--whatsapp {
+  background: var(--cor-whatsapp);
+  color: var(--cor-branco);
+}
+
+.botao--whatsapp:hover:not(:disabled) {
+  background: var(--cor-whatsapp-escuro);
+}
+
+.botao--pequeno {
+  min-height: 36px;
+  padding: var(--espaco-2) var(--espaco-3);
+  font-size: 0.85rem;
+}
+
+/* --- Dialog (usado tanto pelo drawer do carrinho quanto pelo checkout) --- */
+
+.dialog {
+  border: none;
+  padding: 0;
+  border-radius: var(--raio-medio);
+  box-shadow: var(--sombra-elevada);
+  background: var(--cor-creme-claro);
+  color: var(--cor-marrom-escuro);
+}
+
+.dialog::backdrop {
+  background: rgb(59 31 20 / 0.55);
+}
+
+.dialog__conteudo {
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+  padding: var(--espaco-5);
+  overflow-y: auto;
+}
+
+.dialog__cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--espaco-4);
+}
+
+.dialog__cabecalho h2 {
+  margin: 0;
+}
+
+.botao-fechar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--cor-marrom-escuro);
+}
+
+.botao-fechar:hover {
+  background: rgb(59 31 20 / 0.08);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dialog {
+    animation: dialog-surgir 180ms ease;
+  }
+}
+
+@keyframes dialog-surgir {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Stepper de quantidade --- */
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-2);
+}
+
+.stepper__botao {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--cor-marrom-caramelo);
+  font-size: 1.1rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepper__botao:hover {
+  background: var(--cor-marrom-escuro);
+  color: var(--cor-creme-claro);
+}
+
+.stepper__quantidade {
+  min-width: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* --- Toasts --- */
+
+.regiao-toast {
+  position: fixed;
+  bottom: var(--espaco-4);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-2);
+  width: min(90vw, 380px);
+}
+
+.toast {
+  margin: 0;
+  padding: var(--espaco-3) var(--espaco-4);
+  border-radius: var(--raio-pequeno);
+  background: var(--cor-marrom-escuro);
+  color: var(--cor-creme-claro);
+  box-shadow: var(--sombra-elevada);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.toast--erro {
+  background: var(--cor-erro);
+}

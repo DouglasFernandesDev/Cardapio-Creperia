@@ -1,0 +1,114 @@
+/* =========================================================
+   Cabeçalho fixo: logo, status de funcionamento e ações.
+   ========================================================= */
+
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--cor-marrom-escuro);
+  border-bottom: 3px solid var(--cor-dourado);
+}
+
+.cabecalho__conteudo {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+  padding-block: var(--espaco-2);
+}
+
+.cabecalho__marca {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.cabecalho__logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--cor-dourado);
+  object-fit: cover;
+}
+
+.cabecalho__nome {
+  display: none;
+  font-family: var(--fonte-titulo);
+  color: var(--cor-creme-claro);
+  font-size: 1.25rem;
+}
+
+@media (width >= 480px) {
+  .cabecalho__nome {
+    display: inline;
+  }
+}
+
+.cabecalho__status {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: var(--espaco-1) var(--espaco-3);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.1);
+  color: var(--cor-creme-claro);
+  white-space: nowrap;
+}
+
+.cabecalho__status.status--aberto {
+  background: rgb(60 179 113 / 0.2);
+  color: #a8e6c3;
+}
+
+.cabecalho__status.status--fechado {
+  background: rgb(217 160 43 / 0.15);
+  color: var(--cor-dourado-claro);
+}
+
+.cabecalho__acoes {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  margin-left: auto;
+}
+
+.botao-icone {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--cor-creme-claro);
+  background: rgb(255 255 255 / 0.08);
+  transition: background var(--transicao-padrao);
+}
+
+.botao-icone:hover {
+  background: rgb(255 255 255 / 0.18);
+}
+
+.botao-icone svg {
+  width: 22px;
+  height: 22px;
+}
+
+.botao-carrinho__contador {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding-inline: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--cor-dourado);
+  color: var(--cor-marrom-escuro);
+  font-size: 0.7rem;
+  font-weight: 800;
+}

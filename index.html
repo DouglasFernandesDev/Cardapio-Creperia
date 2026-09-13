@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sagrado Creperia — Cardápio Digital</title>
+    <meta
+      name="description"
+      content="Cardápio digital da Sagrado Creperia em Cabo Frio-RJ. Monte seu pedido, calcule o frete por bairro e envie direto pelo WhatsApp."
+    />
+    <link rel="icon" href="imagens/logo.jpeg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Mulish:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components/cabecalho.css" />
+    <link rel="stylesheet" href="css/components/categorias.css" />
+    <link rel="stylesheet" href="css/components/card-produto.css" />
+    <link rel="stylesheet" href="css/components/carrinho.css" />
+    <link rel="stylesheet" href="css/components/checkout.css" />
+    <link rel="stylesheet" href="css/components/ui.css" />
+  </head>
+  <body>
+    <a href="#cardapio" class="pular-para-conteudo">Pular para o cardápio</a>
+
+    <header class="cabecalho" id="topo">
+      <div class="cabecalho__conteudo container">
+        <a href="#topo" class="cabecalho__marca">
+          <img
+            class="cabecalho__logo"
+            src="imagens/logo.jpeg"
+            alt="Logotipo da Sagrado Creperia"
+            width="56"
+            height="56"
+          />
+          <span class="cabecalho__nome">Sagrado Creperia</span>
+        </a>
+
+        <p id="status-loja" class="cabecalho__status" aria-live="polite">Verificando horário…</p>
+
+        <div class="cabecalho__acoes">
+          <a
+            class="botao-icone"
+            data-link-whatsapp
+            href="#"
+            target="_blank"
+            rel="noopener"
+            aria-label="Falar com a Sagrado Creperia no WhatsApp"
+          >
+            <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M16 3C9.4 3 4 8.4 4 15c0 2.3.6 4.4 1.7 6.3L4 29l7.9-1.6c1.8.9 3.9 1.4 6.1 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.7 1 1-4.6-.2-.4C5.4 17.5 5 16.3 5 15c0-6 4.9-11 11-11s11 5 11 11-4.9 10.8-11 10.8zm6-8.2c-.3-.1-1.9-.9-2.2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1c-.3-.1-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.6-1-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"
+              />
+            </svg>
+          </a>
+
+          <button
+            id="botao-abrir-carrinho"
+            type="button"
+            class="botao-icone botao-carrinho"
+            aria-haspopup="dialog"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M7 4h-2l-1 2H2v2h2l3.6 7.6-1.4 2.5c-.2.4-.3.8-.3 1.2 0 1.1.9 2 2 2h11v-2H8.4c-.1 0-.2-.1-.2-.2l.1-.2 1-1.8h6.6c.8 0 1.4-.4 1.8-1.1l3.6-6.5c.2-.3.1-.8-.3-1-.1-.1-.3-.1-.4-.1H6.2l-.9-2zM7 18a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z"
+              />
+            </svg>
+            <span class="sr-only">Abrir carrinho</span>
+            <span id="contador-carrinho" class="botao-carrinho__contador" hidden>0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__conteudo container">
+        <p class="hero__selo">Feito com Amor</p>
+        <h1 class="hero__titulo">Sagrado Creperia</h1>
+        <p class="hero__slogan">O sabor que acolhe, o momento que fica!</p>
+        <div class="hero__acoes">
+          <a href="#cardapio" class="botao botao--dourado">Ver cardápio</a>
+          <a class="botao botao--contorno" data-link-whatsapp href="#" target="_blank" rel="noopener">
+            Falar no WhatsApp
+          </a>
+        </div>
+        <p class="hero__aviso">Atendimento somente delivery — sextas, sábados e domingos.</p>
+      </div>
+    </section>
+
+    <nav class="categorias" aria-label="Categorias do cardápio">
+      <div class="categorias__conteudo container">
+        <div class="categorias__busca">
+          <label for="campo-busca" class="sr-only">Buscar no cardápio</label>
+          <input
+            type="search"
+            id="campo-busca"
+            class="campo-busca"
+            placeholder="Buscar crepe, bebida…"
+          />
+        </div>
+        <div id="lista-categorias" class="categorias__links"></div>
+      </div>
+    </nav>
+
+    <main id="cardapio" class="container">
+      <div id="lista-cardapio"></div>
+    </main>
+
+    <dialog id="dialog-carrinho" class="dialog carrinho" aria-labelledby="carrinho-titulo">
+      <div class="dialog__conteudo">
+        <div class="dialog__cabecalho">
+          <h2 id="carrinho-titulo">Seu carrinho</h2>
+          <button
+            id="botao-fechar-carrinho"
+            type="button"
+            class="botao-fechar"
+            aria-label="Fechar carrinho"
+          >
+            ×
+          </button>
+        </div>
+
+        <p id="carrinho-vazio" class="carrinho__vazio">
+          Seu carrinho está vazio. Adicione um crepe para começar!
+        </p>
+        <ul id="lista-itens-carrinho" class="carrinho__lista" hidden></ul>
+
+        <div class="carrinho__resumo">
+          <p id="carrinho-subtotal" class="carrinho__subtotal" aria-live="polite">Subtotal: R$ 0,00</p>
+          <button id="botao-finalizar" type="button" class="botao botao--dourado" disabled>
+            Finalizar pedido
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="dialog-checkout" class="dialog checkout" aria-labelledby="checkout-titulo">
+      <div class="dialog__conteudo">
+        <div class="dialog__cabecalho">
+          <h2 id="checkout-titulo">Finalizar pedido</h2>
+          <button
+            id="botao-fechar-checkout"
+            type="button"
+            class="botao-fechar"
+            aria-label="Fechar formulário de pedido"
+          >
+            ×
+          </button>
+        </div>
+
+        <form id="formulario-checkout" class="checkout__formulario" novalidate>
+          <div class="campo">
+            <label for="campo-nome">Nome</label>
+            <input id="campo-nome" name="nome" type="text" required autocomplete="name" />
+          </div>
+
+          <div class="campo">
+            <label for="campo-telefone">Telefone (WhatsApp)</label>
+            <input
+              id="campo-telefone"
+              name="telefone"
+              type="tel"
+              inputmode="tel"
+              pattern="[0-9()\-\s+]{8,}"
+              placeholder="(22) 9####-####"
+              required
+              autocomplete="tel"
+            />
+          </div>
+
+          <fieldset class="campo checkout__frete">
+            <legend>Entrega</legend>
+
+            <div class="campo">
+              <label for="select-bairro">Bairro</label>
+              <select id="select-bairro" name="bairro" required></select>
+            </div>
+
+            <button id="botao-localizacao" type="button" class="botao botao--contorno botao--pequeno">
+              📍 Usar minha localização
+            </button>
+
+            <p id="resultado-frete" class="checkout__resultado-frete" aria-live="polite"></p>
+          </fieldset>
+
+          <div class="campo">
+            <label for="campo-rua">Rua e número</label>
+            <input id="campo-rua" name="rua" type="text" required autocomplete="street-address" />
+          </div>
+
+          <div class="campo">
+            <label for="campo-complemento">Complemento / ponto de referência</label>
+            <input id="campo-complemento" name="complemento" type="text" autocomplete="off" />
+          </div>
+
+          <div class="campo">
+            <label for="select-pagamento">Forma de pagamento</label>
+            <select id="select-pagamento" name="pagamento" required></select>
+          </div>
+
+          <div id="campo-troco-container" class="campo" hidden>
+            <label for="campo-troco">Troco para quanto?</label>
+            <input
+              id="campo-troco"
+              name="troco"
+              type="number"
+              min="0"
+              step="0.01"
+              inputmode="decimal"
+              placeholder="Ex.: 100,00"
+            />
+          </div>
+
+          <div class="campo">
+            <label for="campo-observacao-geral">Observações do pedido</label>
+            <textarea id="campo-observacao-geral" name="observacaoGeral" rows="2" maxlength="300"></textarea>
+          </div>
+
+          <p id="checkout-resumo-total" class="checkout__resumo-total" aria-live="polite">
+            Total: R$ 0,00
+          </p>
+
+          <button type="submit" class="botao botao--whatsapp checkout__enviar">
+            Enviar pedido pelo WhatsApp
+          </button>
+        </form>
+      </div>
+    </dialog>
+
+    <footer class="rodape">
+      <div class="rodape__conteudo container">
+        <div class="rodape__coluna">
+          <h2>Sagrado Creperia</h2>
+          <p>Cabo Frio — RJ</p>
+          <a class="rodape__whatsapp" data-link-whatsapp href="#" target="_blank" rel="noopener">
+            (22) 99871-2898
+          </a>
+        </div>
+        <div class="rodape__coluna">
+          <h3>Horário de funcionamento</h3>
+          <ul id="lista-horarios-rodape" class="rodape__horarios"></ul>
+          <p class="rodape__aviso">Atendimento somente delivery.</p>
+        </div>
+      </div>
+      <p class="rodape__copyright">© <span id="ano-rodape"></span> Sagrado Creperia. Feito com amor.</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

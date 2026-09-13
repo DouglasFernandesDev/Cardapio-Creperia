@@ -70,6 +70,17 @@
 .dialog {
   border: none;
   padding: 0;
+
+  /*
+   * O user-agent aplica um `max-width`/`max-height` padrão a todo <dialog>
+   * (algo como `calc(100% - 6px - 2em)`) pensado para sobrar a margem do
+   * padding/borda padrão do elemento. Como zeramos padding e border acima,
+   * essa conta fica errada e encolhe o dialog sem necessidade — no mobile
+   * isso aparecia como uma fresta vazia ao lado do drawer do carrinho. Cada
+   * variante (`.carrinho`, `.checkout`) já define seu próprio tamanho.
+   */
+  max-width: none;
+  max-height: none;
   border-radius: var(--raio-medio);
   box-shadow: var(--sombra-elevada);
   background: var(--cor-creme-claro);
